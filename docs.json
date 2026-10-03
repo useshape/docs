@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Shape",
-  "theme": "mint",
+  "theme": "aspen",
   "colors": {
     "primary": "#0800ff",
     "light": "#8484fc",
