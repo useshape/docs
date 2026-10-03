@@ -1,0 +1,77 @@
+---
+title: "Shape Workbench Tour: Navigate the Five IDE Regions"
+sidebarTitle: "Workbench Tour"
+description: "Learn the five regions of the Shape workbench — activity bar, sidebar, editor, AI chat, and bottom panel — and how to navigate between them."
+---
+
+Shape's workbench is the main editing surface you work in every session. It's organized into five distinct regions — each with a focused purpose — so you can navigate your project, write code, run commands, and talk to the AI without switching windows.
+
+## The Five Regions
+
+<CardGroup cols={2}>
+  <Card title="Activity Bar" icon="sidebar">
+    The narrow vertical strip along the far left edge. Click its icons to switch between sidebar views — Explorer, Search, Source Control, Git Graph, and Outline — or to open the Browser and Settings as editor tabs.
+  </Card>
+  <Card title="Primary Sidebar" icon="panel-left">
+    The panel that opens to the right of the activity bar. Hosts your file tree, search interface, Git staging, commit history, and document outline depending on which activity bar icon is active.
+  </Card>
+  <Card title="Editor" icon="code">
+    The large central area. Opens files as tabs using the Monaco editor, and also hosts the Browser (live design preview), Settings, and diff views in the same tab strip.
+  </Card>
+  <Card title="Secondary Sidebar" icon="message-bot">
+    The right-hand panel dedicated to AI chat. Toggle it open or closed from the titlebar without losing your conversation.
+  </Card>
+  <Card title="Bottom Panel" icon="terminal">
+    The panel along the bottom edge. Contains the integrated Terminal, Problems, Output, and Tests tabs for running commands and reviewing diagnostics.
+  </Card>
+</CardGroup>
+
+## The Titlebar
+
+The titlebar runs across the very top of the window and gives you quick access to everything that isn't part of a specific panel.
+
+| Section | What's there |
+|---|---|
+| **Left** | App icon, sidebar toggle, and the full menu bar — **File**, **Edit**, **View**, **Go**, **Terminal**, **Window**, **Help** |
+| **Center** | Breadcrumbs showing your project path and active filename when a file is open; drag this area to move the window |
+| **Right** | Scripts dropdown, bottom panel toggle, AI Chat toggle, Settings, Reset Layout, and your Avatar menu |
+
+<Tip>
+  On narrower windows the menu bar collapses into an overflow **⋯** menu so the titlebar never wraps.
+</Tip>
+
+### Key titlebar actions
+
+- **Window → Git Manager** — opens the Git Manager in a separate window for pull requests, Actions, and checks.
+- **View → Preview** — opens a Browser tab in the editor for live design preview.
+- **Reset Layout** — restores the default arrangement (primary sidebar open, bottom panel open, AI chat closed) without closing any files.
+
+## Welcome Screen and Empty States
+
+<Tabs>
+  <Tab title="No project open">
+    When no project is loaded, Shape shows a welcome screen with shortcuts to **Open Project**, **Clone**, **Terminal**, and **AI Chat** so you can get started immediately.
+  </Tab>
+  <Tab title="Project open, no file">
+    Once a project is open but no file is selected, the editor area prompts you to pick a file from the Explorer in the sidebar or press **Ctrl+P** to search for one by name.
+  </Tab>
+</Tabs>
+
+## Collapsing and Hiding Regions
+
+You can collapse any region independently to reclaim space for the editor.
+
+| Region | How to toggle |
+|---|---|
+| Primary sidebar | Click the active activity bar icon **or** use the titlebar sidebar toggle |
+| Bottom panel | Click the titlebar panel toggle **or** press **Ctrl+`** |
+| AI Chat (secondary sidebar) | Click the titlebar AI Chat toggle |
+| **Zen Mode** — hides all chrome | **Ctrl+K Z** (press again to exit) |
+
+<Note>
+  **Reset Layout** in the titlebar restores the default arrangement at any time. It does not close open files or affect Zen Mode.
+</Note>
+
+## Settings and Release Notes as Tabs
+
+**Settings** and **Keyboard Shortcuts** both open as editor tabs — treat them like any other file. Close them with **Ctrl+W** when you're done. Release notes also open as a tab rather than a separate window.

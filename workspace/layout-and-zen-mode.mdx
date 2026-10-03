@@ -1,0 +1,106 @@
+---
+title: "Shape IDE Layout, Panel Resizing, and Zen Mode Guide"
+sidebarTitle: "Layout & Zen"
+description: "Resize Shape's sidebars and bottom panel, restore the default layout with one click, or enter Zen Mode to hide all chrome for distraction-free editing."
+---
+
+Shape gives you full control over how much of the interface is visible at any time. You can resize each panel to match your workflow, collapse regions you don't need right now, restore everything to the default with one click, or strip the whole interface down to just the editor with Zen Mode.
+
+## Resizing and Toggling Panels
+
+Each of Shape's three surrounding panels can be resized independently by dragging its divider.
+
+<Tabs>
+  <Tab title="Primary Sidebar (left)">
+    **Open:** Click any activity bar icon, or use the sidebar toggle in the titlebar, or go to **View → Explorer** (and other view shortcuts).
+
+    **Close:** Click the currently active activity bar icon again, or click the titlebar sidebar toggle.
+
+    **Resize:** Drag the vertical divider between the sidebar and the editor left or right.
+
+    Shape remembers which view was active the last time the sidebar was open, so reopening it returns you to the same place.
+  </Tab>
+  <Tab title="AI Chat Sidebar (right)">
+    **Open:** Click the **AI Chat** button in the titlebar, or go to **View → AI Chat**.
+
+    **Close:** Click the same button again.
+
+    **Resize:** Drag the vertical divider between the editor and the AI Chat panel.
+
+    Your conversation is preserved whether the sidebar is open or closed — hiding it does not end or reset the chat session.
+  </Tab>
+  <Tab title="Bottom Panel">
+    **Open / close:** Click the panel toggle in the titlebar, go to **View → Terminal**, or press **Ctrl+`**.
+
+    **Resize:** Drag the top edge of the bottom panel up or down.
+
+    Hiding the bottom panel does not stop any running processes. Terminal sessions continue in the background and are still there when you reopen the panel.
+  </Tab>
+</Tabs>
+
+## Reset Layout
+
+If your panels end up in an unexpected arrangement, click **Reset Layout** in the titlebar to restore the defaults in one click.
+
+After a reset:
+
+| Panel | State |
+|---|---|
+| Primary sidebar | **Open** |
+| Bottom panel | **Open** |
+| AI Chat sidebar | **Closed** |
+| Open files | **Unchanged** |
+| Zen Mode preference | **Unchanged** |
+| Sidebar view selection | **Unchanged** |
+
+<Note>
+  Reset Layout only adjusts panel visibility. It never closes your open files, editor tabs, or changes which sidebar view (Explorer, Search, Git, etc.) was last active.
+</Note>
+
+## Zen Mode
+
+Zen Mode hides every UI region except the editor and the titlebar menu bar, giving you an uninterrupted writing and coding surface.
+
+### What Zen Mode hides
+
+- Activity bar
+- Primary sidebar (left)
+- AI Chat sidebar (right)
+- Bottom panel
+
+The titlebar menu bar stays visible so you can still reach menus, and any editor splits you have open continue to work normally inside Zen Mode.
+
+### Entering and exiting Zen Mode
+
+<Steps>
+  <Step title="Enter Zen Mode">
+    Use any of these three methods:
+    - Press **Ctrl+K Z**
+    - Go to **View → Zen Mode**
+    - Open the command palette (**Ctrl+Shift+P**) and run **View: Toggle Zen Mode**
+  </Step>
+  <Step title="Work in Zen Mode">
+    Edit, navigate between tabs, and use editor splits as normal. All keyboard shortcuts still work.
+  </Step>
+  <Step title="Exit Zen Mode">
+    Press the same shortcut you used to enter — **Ctrl+K Z** — or repeat the menu / command palette action. Shape restores all panels to the state they were in before you entered Zen Mode.
+  </Step>
+</Steps>
+
+<Tip>
+  Zen Mode is ideal for reviewing a long file, presenting code to a colleague, or pairing sessions where you want to minimize distractions. It's also useful during focused writing sprints in Markdown or documentation files.
+</Tip>
+
+### What Zen Mode does not change
+
+<Accordion title="Font size and word wrap">
+  Zen Mode does not alter your font size, line height, or word wrap settings. Change those in **Settings** independently.
+</Accordion>
+
+<Accordion title="Editor splits">
+  Any splits you have open before entering Zen Mode remain active inside it. You can also create new splits while in Zen Mode — they occupy the full available editor area.
+</Accordion>
+
+<Accordion title="Panel state on exit">
+  When you exit Zen Mode, Shape restores every panel to exactly the state it was in when you entered. If the terminal was open and running a process before you entered, it will be open and running when you exit.
+</Accordion>

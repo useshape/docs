@@ -1,0 +1,86 @@
+---
+title: "View Problems, Output, and Test Results in Shape IDE"
+sidebarTitle: "Problems & Tests"
+description: "Shape's Problems tab shows diagnostics with F8 navigation, Output shows tool logs, and Tests surfaces structured test results linked to your source files."
+icon: ri-error-warning-line
+order: 3
+---
+
+Shape's bottom panel is more than a terminal. It hosts dedicated tabs for compiler and linter diagnostics, tool logs, and test results — giving you a single place to monitor the health of your project as you work.
+
+## Problems Tab
+
+The **Problems** tab aggregates diagnostics from all active language services and code analysis tools. Every error and warning in your project surfaces here, linked directly to the file and line that caused it.
+
+### Open the Problems tab
+
+- Press **Ctrl+Shift+M**
+- Run **View: Show Problems** from the Command Palette (**Ctrl+Shift+P**)
+
+### Navigate diagnostics
+
+| Action | Shortcut |
+|--------|----------|
+| Jump to next problem | **F8** |
+| Jump to previous problem | **Shift+F8** |
+| Jump to file and line | Click the problem row |
+
+The **status bar** at the bottom of the window shows a live count of errors and warnings (e.g., `⓪ 2  ⚠ 5`). Click the count to open the Problems tab.
+
+### Diagnostic sources
+
+The Problems tab collects diagnostics from:
+
+- **TypeScript / JavaScript** — type errors and syntax issues from the language server
+- **ESLint** — rule violations when ESLint is enabled in your project
+- **Design diagnostics** — contrast and accessibility checks from Shape's design layer
+- **CSS and HTML services** — invalid properties, unknown selectors, and markup errors
+
+### Apply a Quick Fix
+
+When a diagnostic has an automated fix available, place your cursor on the highlighted code and press **Ctrl+.** to open the Quick Fix menu. Select a fix to apply it instantly.
+
+## Output Tab
+
+The **Output** tab shows logs emitted by Shape's tooling, language servers, and feature subsystems. It is most useful for diagnosing why a language service is not working as expected or why a feature appears unavailable.
+
+Open it from the Command Palette: **View: Show Output**.
+
+Use the **source selector** dropdown in the Output tab header to filter logs to a specific service (e.g., TypeScript Server, ESLint, Shape AI).
+
+## Tests Tab
+
+The **Tests** tab displays structured test results when your test runner emits them in a supported format. Failed tests link directly to the file and assertion that caused the failure.
+
+To populate the Tests tab, run your test suite from the terminal:
+
+```bash
+npm test
+```
+
+Or configure a task to run tests automatically. Passed, failed, and skipped counts appear at the top of the tab after the run completes.
+
+## Recommended Panel Workflow
+
+<Accordion title="Fixing type errors">
+  Keep the **Problems** tab visible while editing. Use **F8** to step through each error, apply Quick Fixes with **Ctrl+.**, and watch the error count in the status bar drop to zero before committing.
+</Accordion>
+
+<Accordion title="Diagnosing a build failure">
+  Switch to the **Terminal** tab to run your build command and read the full output. If the error message is unclear, switch to the **Output** tab and select the relevant language server to see whether it failed to start or encountered a configuration issue.
+</Accordion>
+
+<Accordion title="Reviewing test failures">
+  Run your tests from the terminal, then switch to the **Tests** tab to see a structured summary. Click a failing test to jump directly to the assertion in your source file.
+</Accordion>
+
+<Tip>
+Toggle the entire bottom panel with **Ctrl+`** at any time. Shape preserves the contents of all tabs — Problems, Output, Tests, and Terminal — so nothing is lost when you hide the panel to reclaim screen space.
+</Tip>
+
+## Related
+
+- [IntelliSense](/editor/intellisense)
+- [Lint and LSP](/settings/lint-and-lsp)
+- [Integrated Terminal](/terminal/integrated-terminal)
+- [Titlebar and Panels](/workspace/titlebar-and-panels)

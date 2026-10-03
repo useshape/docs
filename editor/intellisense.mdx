@@ -1,0 +1,88 @@
+---
+title: "IntelliSense: Code Completions and Diagnostics in Shape"
+sidebarTitle: "IntelliSense"
+description: "Shape provides IntelliSense for TypeScript, JavaScript, CSS, HTML, JSON, and Tailwind — completions, go-to-definition, diagnostics, and Quick Fix actions."
+---
+
+IntelliSense is Shape's language-aware assistance layer. As you type, it surfaces completions, inline documentation, type information, and error diagnostics — all powered by the same language server infrastructure used in professional development tools. You get accurate suggestions without any manual setup for the supported languages.
+
+## Code Completions
+
+Start typing in any supported file and the completions panel appears automatically. Press `Tab` or `Enter` to accept the highlighted suggestion. Completions include symbols, methods, properties, imported identifiers, and — for Tailwind CSS — utility class names.
+
+<Tip>
+If the completions panel closes, resume typing or press `Ctrl+Space` to reopen it manually.
+</Tip>
+
+## Built-In Language Servers
+
+Shape ships language servers for the most common web development languages. Toggle any of them under **Settings → Features → Language Servers**.
+
+<CardGroup cols={2}>
+  <Card title="TypeScript & JavaScript" icon="js">
+    Full type-aware completions, automatic import suggestions, and refactor hints for `.ts`, `.tsx`, `.js`, and `.jsx` files.
+  </Card>
+  <Card title="CSS & HTML" icon="css3">
+    Selector, tag, and attribute completions with property value suggestions across `.css`, `.scss`, `.html`, and JSX class attributes.
+  </Card>
+  <Card title="JSON" icon="brackets-curly">
+    Schema-aware completions and inline validation. Shape applies known schemas (such as `tsconfig.json` and `package.json`) automatically.
+  </Card>
+  <Card title="Tailwind CSS" icon="wind">
+    Full class completions inside `className` strings with project frequency ranking and spacing scale awareness.
+  </Card>
+</CardGroup>
+
+## Hovers
+
+Hover over any symbol to see its type signature, documentation, and — for CSS color values — an inline color preview. Hold `Ctrl` while hovering to peek the definition inline without navigating away from your current position.
+
+## Go-To Navigation
+
+<Accordion title="Navigation shortcuts">
+
+| Action | Shortcut |
+|---|---|
+| Go to Definition | `F12` |
+| Peek Definition (inline) | `Alt+F12` |
+| Find All References | `Shift+F12` |
+| Go to Symbol in Workspace | `Ctrl+T` |
+| Go to Next Problem | `F8` |
+| Go to Previous Problem | `Shift+F8` |
+
+</Accordion>
+
+**Find All References** (`Shift+F12`) opens an inline panel listing every location in the project where the symbol is used — click any result to jump to it. **Go to Symbol in Workspace** (`Ctrl+T`) lets you search for any named symbol across all files with fuzzy matching.
+
+## Quick Fix
+
+When a lightbulb (💡) appears next to a line, press `Ctrl+.` to open the Quick Fix menu. Common actions include:
+
+- **Add missing import** — resolves an unresolved identifier by inserting the correct import statement.
+- **Fix ESLint violation** — applies the rule's auto-fix when one is available.
+- **Apply TypeScript correction** — accepts a compiler suggestion such as converting `require` to `import` or adding a missing type annotation.
+
+## Diagnostics
+
+Shape surfaces errors and warnings in three places at once:
+
+1. **Squiggles in the editor** — red for errors, yellow for warnings, blue for information.
+2. **Problems panel** — open with `Ctrl+Shift+M` to see every diagnostic across the project with file and line references.
+3. **Tab indicator** — tabs with errors show a colored dot so you can spot problem files at a glance.
+
+Diagnostic sources include the TypeScript compiler, ESLint, the Tailwind CSS service, and Shape's built-in design diagnostics (contrast and accessibility checks).
+
+## Rename Symbol
+
+Press `F2` on any symbol to rename it across the entire project. Shape shows a preview of every affected location before applying the change, so you can confirm the scope before committing.
+
+```ts
+// Place cursor on `userProfile`, press F2, type new name
+const userProfile = await fetchUser(id);
+//    ^^^^^^^^^^^
+//    Rename previews changes in all files
+```
+
+<Note>
+Rename Symbol uses the active language server for reference resolution. For TypeScript and JavaScript, renaming works across files including re-exports and barrel files.
+</Note>

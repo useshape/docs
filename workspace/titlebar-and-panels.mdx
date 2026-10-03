@@ -1,0 +1,106 @@
+---
+title: "Shape Titlebar and Bottom Panel: Controls Reference"
+sidebarTitle: "Titlebar & Panels"
+description: "Learn how to use Shape's titlebar toggles, run npm scripts from the Scripts menu, and switch between Terminal, Problems, and Output tabs."
+---
+
+The titlebar and bottom panel are your command center for everything outside the editor itself — running scripts, toggling panels, checking errors, and managing your Shape account. Getting familiar with them saves you from hunting through menus.
+
+## Titlebar Layout
+
+The titlebar is divided into three zones:
+
+<CardGroup cols={3}>
+  <Card title="Left" icon="align-left">
+    App icon, primary sidebar toggle, and the full menu bar: **File**, **Edit**, **View**, **Go**, **Terminal**, **Window**, **Help**. On narrow windows, the menu collapses into an overflow **⋯** button.
+  </Card>
+  <Card title="Center" icon="align-center">
+    Breadcrumbs showing your project path and the active filename when you're editing a file. Drag this area to move the Shape window around your desktop.
+  </Card>
+  <Card title="Right" icon="align-right">
+    **Scripts**, **Panel toggle**, **AI Chat toggle**, **Settings**, **Reset Layout**, and the **Avatar** menu for your Shape account and connected GitHub profile.
+  </Card>
+</CardGroup>
+
+### Quick-access actions from the titlebar
+
+| Button | What it does | Menu equivalent |
+|---|---|---|
+| Sidebar toggle | Opens / closes the primary sidebar | **View → Explorer** |
+| Scripts | Runs npm scripts from your `package.json` | — |
+| Panel toggle | Shows / hides the bottom panel | **View → Terminal** |
+| AI Chat toggle | Opens / closes the AI chat sidebar | **View → AI Chat** |
+| Settings | Opens Settings as an editor tab | **Window → Settings** |
+| Reset Layout | Restores the default panel arrangement | — |
+| Avatar | Shape account + GitHub connection | — |
+
+<Tip>
+  **Window → Git Manager** opens the Git Manager in a separate window. **View → Preview** opens a Browser tab in the editor for live design work. Neither lives in the titlebar directly — reach them from the menu bar.
+</Tip>
+
+## Running Scripts
+
+The **Scripts** dropdown reads your project's `package.json` and lists every script entry so you can run them without touching the terminal manually.
+
+<Steps>
+  <Step title="Open the Scripts dropdown">
+    Click **Scripts** in the right side of the titlebar.
+  </Step>
+  <Step title="Choose a script">
+    Select the script you want to run — for example, `dev`, `build`, or `test`.
+  </Step>
+  <Step title="Shape launches it">
+    Shape opens a terminal session in the bottom panel and runs the script automatically.
+  </Step>
+</Steps>
+
+<Note>
+  The Scripts menu only appears when a project with a `package.json` is open. If the file has no `scripts` section, the dropdown will be empty.
+</Note>
+
+## Bottom Panel
+
+The bottom panel holds transient command output — things that run and produce logs rather than files you edit. It has four tabs:
+
+<Tabs>
+  <Tab title="Terminal">
+    A full integrated terminal session. Open it with the titlebar panel toggle, **View → Terminal**, or **Ctrl+`**. The terminal keeps running in the background even when the panel is hidden — closing the panel does not kill your process.
+  </Tab>
+  <Tab title="Problems">
+    Diagnostic errors and warnings from the language server for your open files. Open with **Ctrl+Shift+M** or **View → Problems**.
+  </Tab>
+  <Tab title="Output">
+    Logs from Shape's built-in tools and extensions. Open via the command palette: run **View: Show Output**.
+  </Tab>
+  <Tab title="Tests">
+    Test runner results. Appears when test output is available for your project.
+  </Tab>
+</Tabs>
+
+### Resizing and switching tabs
+
+- **Switch tabs** — click any tab label (Terminal, Problems, Output, Tests) along the top of the panel.
+- **Resize the panel** — drag the top edge of the panel up or down to give it more or less vertical space.
+
+## Reset Layout
+
+Clicking **Reset Layout** in the titlebar restores Shape's default arrangement:
+
+- Primary sidebar — **open**
+- Bottom panel — **open**
+- AI Chat sidebar — **closed**
+
+<Note>
+  Reset Layout never closes your open files and does not affect Zen Mode. Use it any time the window feels cluttered or panels have ended up in an unexpected state.
+</Note>
+
+## Understanding the Panel Hierarchy
+
+Shape has four distinct surfaces that can hold content. Knowing which surface hosts what prevents confusion:
+
+| Surface | What lives here |
+|---|---|
+| Primary sidebar (left) | Explorer, Search, Source Control, Git Graph, Outline |
+| Editor tabs (center) | Source files, Browser, Settings, diffs |
+| Secondary sidebar (right) | AI Chat |
+| Bottom panel | Terminal, Problems, Output, Tests |

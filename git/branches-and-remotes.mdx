@@ -1,0 +1,78 @@
+---
+title: "Switch Git Branches and Manage Remotes in Shape IDE"
+sidebarTitle: "Branches & Remotes"
+description: "Switch and create branches, add or edit remote URLs, and keep your local repository in sync with push, pull, and sync from the Source Control sidebar."
+icon: ri-git-pull-request-line
+order: 2
+---
+
+Shape's Source Control panel gives you everything you need to work across branches and keep your local repository in sync with remote servers. Switch context, create feature branches, and manage remote URLs without touching a terminal.
+
+## Current Branch
+
+The current branch name appears at the top of the [Source Control](/git/source-control) panel and in the status bar at the bottom of the window. Click it to open the **branch picker**.
+
+## Switch Branches
+
+Click the **branch name** displayed in the Source Control header or in the status bar to open the branch picker. Select any local branch to check it out — Shape runs `git checkout` in the background and refreshes the editor.
+
+<Note>
+If you have uncommitted changes that conflict with the target branch, Shape will block the switch. Commit or stash your work first, then switch branches.
+</Note>
+
+## Create a Branch
+
+<Steps>
+  <Step title="Open the branch picker">
+    Click the branch name in the Source Control header or the status bar.
+  </Step>
+  <Step title="Choose Create new branch…">
+    Select **Create new branch…** at the top of the picker.
+  </Step>
+  <Step title="Enter a name">
+    Type a branch name — for example, `feature/auth` or `fix/login-bug` — and press **Enter**.
+  </Step>
+</Steps>
+
+Shape creates the branch from your current `HEAD` and checks it out immediately. You can also create branches from the **Command Palette** (`Ctrl+Shift+P`) or from the integrated terminal using `git checkout -b`.
+
+## Manage Remotes
+
+Open the remote dialog from the **Source Control toolbar** or via the command palette to add, edit, or remove remotes.
+
+| Action | What it does |
+|--------|-------------|
+| **Add remote** | Links a name (e.g., `origin`) to a URL |
+| **Edit remote** | Updates the URL for an existing remote |
+| **Remove remote** | Deletes the local reference — does not affect the server |
+
+You can use either **HTTPS** or **SSH** URLs. For GitHub HTTPS remotes, sign in with GitHub (via the avatar menu in the titlebar) to authenticate without repeated password prompts.
+
+<Tip>
+See [GitHub Sign-In](/git/github-sign-in) to connect your GitHub account and avoid credential prompts on every push and pull.
+</Tip>
+
+## Fetch, Push, Pull, and Sync
+
+Use the sync controls in the Source Control toolbar to keep your branches aligned with the remote:
+
+| Action | What it does |
+|--------|-------------|
+| **Pull** | Downloads remote changes and merges them into the current branch |
+| **Push** | Uploads your local commits to the remote branch |
+| **Sync** | Pulls first, then pushes — a single action to fully reconcile |
+
+### Understand ahead/behind counts
+
+After a fetch, the status bar and branch picker show counts like **↑2 ↓1**, meaning your local branch is 2 commits ahead and 1 commit behind the remote. Push to send your commits upstream; pull to bring in the remote's commits.
+
+### Auto Fetch
+
+Enable **Auto Fetch** in **Git Settings** to have Shape periodically fetch from the remote and keep your ahead/behind counts up to date automatically.
+
+## Related
+
+- [Source Control](/git/source-control)
+- [GitHub Sign-In](/git/github-sign-in)
+- [Git Graph](/git/git-graph)
+- [Clone and Commit Tutorial](/tutorials/clone-and-commit)

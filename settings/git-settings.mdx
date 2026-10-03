@@ -1,0 +1,65 @@
+---
+title: "Git Settings: Auto-Fetch, Blame, and Commit Options"
+sidebarTitle: "Git Settings"
+description: "Configure Shape's Git integration: enable auto-fetch, require commit confirmation, show all branches, and toggle inline blame annotations."
+---
+
+Shape's Git settings live under **Settings → Features → Source Control**. They control how the Source Control panel and Git Graph behave — from background remote syncing to inline blame annotations.
+
+## Auto Fetch
+
+Keep your local repository's remote-tracking branches up to date without manually running `git fetch`.
+
+| Setting | Description |
+|---|---|
+| **Auto fetch** | Toggles the background fetch job on or off. |
+| **Auto fetch interval** | How often (in minutes) Shape runs `git fetch` in the background. |
+
+<Note>
+  Auto fetch updates remote-tracking branches and the ahead/behind counts shown in the Source Control header. It does **not** merge or rebase your working branch — your local commits are never changed automatically.
+</Note>
+
+## Commit Behavior
+
+| Setting | Description |
+|---|---|
+| **Confirm before commit** | Shows a confirmation dialog each time you create a commit. Enable this if you want an extra checkpoint before commits are recorded. |
+
+## Git Graph Display
+
+<Accordion title="Graph avatars">
+  When enabled, each row in the Git Graph shows the author's avatar next to the commit. Avatars are fetched based on the committer email. Disable to reduce visual clutter or if you work offline frequently.
+</Accordion>
+
+<Accordion title="Show all branches">
+  When enabled, the Git Graph runs `git log --all` and draws lanes for every local and remote branch. When disabled, only the currently checked-out branch's history is shown. Turn this on to get a full picture of your repository's commit topology.
+</Accordion>
+
+## Git Blame
+
+Git blame annotates each line in the editor with the author and date of the most recent commit that changed that line.
+
+**To use blame:**
+
+<Steps>
+  <Step title="Enable the setting">
+    Go to **Settings → Features → Source Control** and turn on **Git blame**.
+  </Step>
+  <Step title="Toggle annotations in the editor">
+    Open the Command Palette (**Ctrl+Shift+P**) and run **Git: Toggle Blame Annotations**, or right-click in the editor gutter and select **Toggle Git Blame**.
+  </Step>
+</Steps>
+
+<Note>
+  Git blame requires an open folder that is a Git repository. The annotations will not appear in files outside a repo.
+</Note>
+
+## What Is Not in Git Settings
+
+The following Git-related features are configured elsewhere in Shape:
+
+- **Branch creation and switching** — Source Control sidebar or the branch picker in the title bar
+- **Remote URLs** — Remotes dialog in the Source Control sidebar
+- **Push and pull** — Source Control sidebar actions
+- **Pull requests and GitHub Actions** — Git Manager (**Window → Git Manager**)
+- **GitHub authentication** — Avatar menu in the title bar

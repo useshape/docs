@@ -1,0 +1,76 @@
+---
+title: "Editor Tabs, Split Views, and Preview Modes in Shape"
+sidebarTitle: "Tabs & Splits"
+description: "Open files in tabs, split the editor for side-by-side views, preview Markdown and images, and switch between diff, browser, and source tabs in Shape."
+---
+
+Every file you open in Shape appears as a tab at the top of the editor. Tabs give you quick access to recent files, while the split editor lets you view two files side by side without leaving the window. Specialized tab types — diff, browser, and preview — live alongside your source tabs in the same interface.
+
+## Working with Tabs
+
+Tabs reflect the order in which files were opened. The most recently used file becomes the active tab when you close the current one.
+
+| Action | How |
+|---|---|
+| Close current tab | `Ctrl+W` |
+| Close all tabs | `Ctrl+K E` |
+| Close tab with mouse | Middle-click the tab |
+| Reopen closed tab | Command Palette → **Reopen Closed Editor** |
+| Jump to any open file | `Ctrl+P` |
+
+A dot (●) on a tab means the file has unsaved changes. Save with `Ctrl+S` to clear it.
+
+<Tip>
+Use `Ctrl+P` to jump to any open file by name without clicking through the tab strip — especially useful when you have many tabs open.
+</Tip>
+
+## Splitting the Editor
+
+Split the editor to view two files side by side — useful for referencing a component while editing its styles, or comparing two implementations.
+
+<Steps>
+  <Step title="Open the split">
+    Click the **Split Editor Right** button on the tab bar, or right-click any tab and choose **Split Right**.
+  </Step>
+  <Step title="Arrange your tabs">
+    Drag any tab from one group to the other. Each group maintains its own tab strip and active file.
+  </Step>
+  <Step title="Close the split">
+    Click **Close Split** (or close all tabs in one group) to return to a single editor pane.
+  </Step>
+</Steps>
+
+<Note>
+Split view works in Zen Mode. Press `Ctrl+K Z` to enter Zen Mode, then split as normal for a distraction-free side-by-side layout.
+</Note>
+
+## Preview Modes by File Type
+
+Certain file types open with additional preview options accessible from the tab bar:
+
+<CardGroup cols={3}>
+  <Card title="Markdown & MDX" icon="file-lines">
+    Toggle between **Source**, **Split**, and **Preview** using the controls on the tab bar. Split shows the editor and rendered output side by side.
+  </Card>
+  <Card title="Images" icon="image">
+    Image files display an inline preview directly in the editor pane. No separate viewer required.
+  </Card>
+  <Card title="Fonts" icon="font">
+    Font files open with a source view alongside a live preview showing character sets and weight samples.
+  </Card>
+</CardGroup>
+
+## Browser Tab
+
+Open an embedded browser tab from **View → Preview** or by clicking the Chrome icon on the activity bar. The tab loads at `shape://browser` and behaves like a lightweight browser panel inside Shape. Close it with `Ctrl+W` like any other tab.
+
+## Diff Tabs
+
+Diff tabs open automatically when you click a changed file in the Source Control panel. They show a read-only Monaco comparison view:
+
+| Label | What it compares |
+|---|---|
+| **Working Tree** | Your unstaged edits vs. the index |
+| **Index** | Staged changes vs. the last commit |
+
+From a diff tab you can stage, unstage, or restore individual hunks directly. See [Diff & Merge](./diff-and-merge) for full details on hunk-level actions.

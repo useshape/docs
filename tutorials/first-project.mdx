@@ -1,0 +1,96 @@
+---
+title: "First Project Tutorial: Open, Run, and Edit in Shape"
+sidebarTitle: "First Project"
+description: "Open a web project, install dependencies, start your dev server, make your first edit, and try AI Ask mode — a beginner walkthrough for Shape IDE."
+---
+
+This tutorial walks you through the complete beginner workflow in Shape: opening an existing web project, running it locally, making a change, checking for problems, and asking the AI a question without modifying any code. By the end you will know the core gestures you will use every day.
+
+**Prerequisites:** Shape installed on Windows and a web project folder on your machine that contains a `package.json`.
+
+---
+
+<Steps>
+  <Step title="Open your project">
+    Launch Shape. On the welcome screen click **Open Project**, or go to **File → Open Folder** (**Ctrl+K Ctrl+O**), then select the folder that contains your `package.json`.
+
+    Shape loads the project into the Explorer panel and activates language tooling automatically.
+  </Step>
+
+  <Step title="Install dependencies">
+    Press **Ctrl+`** to open the integrated terminal, then run your package manager's install command:
+
+    ```bash
+    npm install
+    ```
+
+    Substitute `pnpm install`, `yarn`, or `bun install` if your project uses a different package manager. Wait for the install to finish before moving on.
+  </Step>
+
+  <Step title="Start your dev server">
+    You have two options:
+
+    <Tabs>
+      <Tab title="Scripts menu">
+        Click **Scripts** in the title bar, find your project's `dev` or `start` script, and click it. Shape runs the script in a terminal tab automatically.
+      </Tab>
+      <Tab title="Terminal">
+        In the terminal, run:
+
+        ```bash
+        npm run dev
+        ```
+      </Tab>
+    </Tabs>
+
+    Look for a local URL in the terminal output — typically `http://localhost:3000`. Click the **Chrome icon** on the Activity Bar (or go to **View → Preview**) to open the Browser tab, enter the URL, then press **Ctrl+Shift+D** to switch on design mode.
+  </Step>
+
+  <Step title="Edit a file">
+    Press **Ctrl+P**, start typing a component or page filename, and select it from the list to open it in the editor.
+
+    Make a visible change — for example, edit a heading or a class name — then press **Ctrl+S** to save. The browser hot-reloads and you will see the change reflected immediately.
+  </Step>
+
+  <Step title="Check for problems">
+    Press **Ctrl+Shift+M** to open the Problems panel. Any TypeScript type errors or ESLint rule violations appear here with file names and line numbers. Fix any issues before moving on.
+  </Step>
+
+  <Step title="Ask the AI a question">
+    Click **AI Chat** in the title bar to open the chat panel. Select **Ask** mode from the mode switcher.
+
+    Type a question like:
+
+    ```
+    What does the main entry file do?
+    ```
+
+    Press Enter and read the response. Ask mode explains your code without applying any edits — safe to use whenever you want to understand something without making changes.
+  </Step>
+</Steps>
+
+---
+
+## What You Learned
+
+<CardGroup cols={2}>
+  <Card title="Open and navigate" icon="folder-open">
+    Open project folders with **Ctrl+K Ctrl+O** and jump to any file instantly with **Ctrl+P**.
+  </Card>
+  <Card title="Run scripts" icon="play">
+    Start your dev server from the Scripts menu or the terminal, and watch output in the terminal tab.
+  </Card>
+  <Card title="Preview in the browser" icon="browser">
+    Use the built-in Browser tab with design mode (**Ctrl+Shift+D**) for a live preview of your running app.
+  </Card>
+  <Card title="Read diagnostics" icon="triangle-exclamation">
+    Open the Problems panel (**Ctrl+Shift+M**) to catch TypeScript and ESLint issues as you work.
+  </Card>
+  <Card title="Ask the AI" icon="comment-question">
+    Use Ask mode in the AI Chat panel to get explanations of your codebase without touching your files.
+  </Card>
+</CardGroup>
+
+<Tip>
+  Ready for the next step? Try the [Clone & Commit tutorial](/tutorials/clone-and-commit) to learn Shape's Git workflow, or jump to [Refactor with AI](/tutorials/refactor-with-ai) to make your first AI-assisted code change.
+</Tip>

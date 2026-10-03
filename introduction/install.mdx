@@ -1,0 +1,92 @@
+---
+title: "Download and Install Shape IDE for Windows 10 and Later"
+sidebarTitle: "Installation"
+description: "Download the Shape IDE installer for Windows 10 or later, run setup, and confirm everything is working before you write your first line of code."
+---
+
+Shape runs as a native Windows application and installs like any standard desktop app. The steps below walk you through downloading the installer, handling any Windows security prompts, and confirming that everything is working before you write your first line of code.
+
+## Requirements
+
+Before you install, make sure your machine meets the following:
+
+| Requirement | Details |
+|---|---|
+| **Operating system** | Windows 10 64-bit or later |
+| **Git** | Required for source control features — install [Git for Windows](https://git-scm.com/download/win) if not present |
+| **Node.js** | Recommended for JavaScript/TypeScript projects — download from [nodejs.org](https://nodejs.org) |
+
+<Note>
+You can open local projects, edit files, and use the terminal without signing in to any account. A Shape account is only required to access cloud AI features.
+</Note>
+
+## Install Shape
+
+<Steps>
+  <Step title="Download the installer">
+    Go to [useshape.org/download](https://useshape.org/download) and download the latest Windows installer (`.exe`).
+  </Step>
+  <Step title="Run the installer">
+    Open the downloaded file to launch the setup wizard. Follow the on-screen prompts to complete installation.
+
+    <Warning>
+      If Windows SmartScreen displays a warning, click **More info** and then **Run anyway**. Shape is not yet widely distributed enough to clear SmartScreen's reputation threshold automatically.
+    </Warning>
+  </Step>
+  <Step title="Launch Shape">
+    Open Shape from the **Start menu** after installation finishes. The welcome screen appears the first time you run the app.
+  </Step>
+  <Step title="Verify your install">
+    Confirm everything is set up correctly:
+    - Open a folder with **File → Open Folder**
+    - Open the integrated terminal with **View → Terminal** or press **Ctrl+`**
+
+    If both work, your installation is complete.
+  </Step>
+</Steps>
+
+## Keeping Shape up to date
+
+Shape checks for updates automatically in the background. When an update is available, a prompt appears in the title bar.
+
+You can also manage updates manually:
+
+- **Check now:** Go to **Help → Check for Updates**
+- **Change update channel:** Open **Settings → Account** to switch between stable and preview channels
+- **Disable auto-checks:** Turn off automatic update checks in **Settings → Account** if you prefer to update on your own schedule
+
+## Troubleshooting
+
+<Accordion title="Shape won't start">
+  Try the following steps in order:
+
+  1. Restart Windows and attempt to launch Shape again.
+  2. Re-run the installer to repair any files that may have been corrupted or blocked.
+  3. Check your antivirus software — some tools quarantine the Shape executable on first run. Add Shape to your antivirus allowlist and retry.
+</Accordion>
+
+<Accordion title="Git features are unavailable or not recognised">
+  Shape requires Git to be installed and available on your system PATH.
+
+  1. Download and install [Git for Windows](https://git-scm.com/download/win).
+  2. Restart Shape after installation — Shape reads the PATH at launch and will detect Git automatically.
+
+  To confirm Git is available, open the integrated terminal and run:
+
+  ```bash
+  git --version
+  ```
+</Accordion>
+
+<Accordion title="Node.js is not detected">
+  If Shape or the terminal can't find Node.js:
+
+  1. Download and install the LTS release from [nodejs.org](https://nodejs.org).
+  2. Restart Shape so it picks up the updated PATH.
+
+  Verify Node.js is available by running the following in the terminal:
+
+  ```bash
+  node --version
+  ```
+</Accordion>

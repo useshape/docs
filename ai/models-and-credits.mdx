@@ -1,0 +1,73 @@
+---
+title: "Shape AI Chat: Models, Credit Rates, and Plan Pricing"
+sidebarTitle: "Models & Credits"
+description: "Shape includes Auto at no credit cost, plus premium models from Anthropic, OpenAI, Google, xAI, and DeepSeek. Compare credit rates and plan pricing."
+---
+
+Shape routes AI Chat through cloud models. A Shape account is required to use any cloud model. Every plan includes **Auto**, Shape's built-in routing to a fast backend model. Paid plans unlock the full model catalog, billed in credits.
+
+## Plans
+
+| Plan | Price | Credits / month | Models available |
+|---|---|---|---|
+| **Free** | $0 | Auto allowance only | Auto only |
+| **Plus** | $15 / mo | 450 credits | Auto + all premium |
+| **Pro** | $50 / mo | 1,500 credits | Auto + all premium |
+| **Max** | $150 / mo | 4,500 credits | Auto + all premium |
+
+You can check your current usage from the avatar menu in the app.
+
+## Auto Model
+
+**Auto** is Shape's included tier — it routes your messages to a fast, capable backend model and doesn't draw from your credit balance. Free accounts use Auto exclusively. Plus and higher plans can use Auto alongside any premium model.
+
+Start with Auto before reaching for a premium model. It handles the majority of everyday coding tasks well.
+
+## Premium Models
+
+Premium models are billed in credits per million tokens. Credits are deducted for input tokens, cached input tokens (at a reduced rate), and output tokens separately.
+
+| Model | Provider | Input | Cache | Output | Context |
+|---|---|---|---|---|---|
+| Claude Opus 5 | Anthropic | 350 | 35 | 1,750 | 1M |
+| Claude Sonnet 5 | Anthropic | 210 | 21 | 1,050 | 1M |
+| Claude Sonnet 4.6 | Anthropic | 210 | 21 | 1,050 | 200K |
+| GPT-5.6 Sol | OpenAI | 350 | 35 | 2,100 | 1M |
+| GPT-5.5 | OpenAI | 350 | 35 | 2,100 | 1M |
+| GPT-5.4 | OpenAI | 175 | 18 | 1,050 | 200K |
+| Gemini 3.1 Pro | Google | 140 | 14 | 840 | 2M |
+| Grok 4.3 | xAI | 140 | 70 | 700 | 128K |
+| DeepSeek V3.2 | DeepSeek | 35 | 18 | 140 | 128K |
+
+*Credit rates are per million tokens. All premium models require Plus or higher.*
+
+## Choosing the Right Model
+
+<CardGroup cols={2}>
+  <Card title="Everyday edits and questions" icon="bolt">
+    Use **Auto**. It's fast, free from your credit balance, and handles most tasks without needing a flagship model.
+  </Card>
+  <Card title="Hard multi-file refactors" icon="code">
+    Use **Claude Opus 5** or **GPT-5.6 Sol** for the most complex tasks where reasoning depth matters most.
+  </Card>
+  <Card title="Strong coding at lower cost" icon="gauge">
+    Use **Claude Sonnet 5** — it delivers near-flagship coding quality at roughly half the credit rate of Opus.
+  </Card>
+  <Card title="Very large codebases" icon="database">
+    Use **Gemini 3.1 Pro** for its 2M-token context window when you need to pass in many files at once.
+  </Card>
+  <Card title="Stretch your credits" icon="piggy-bank">
+    Use **DeepSeek V3.2** for high-volume tasks where budget matters — it costs a fraction of the flagship models.
+  </Card>
+</CardGroup>
+
+## Tips for Managing Credits
+
+<Tip>
+Use **Ask mode** when you don't need file edits. Ask mode still reads your codebase, but read-only conversations are typically shorter and cheaper than agentic Code mode sessions.
+</Tip>
+
+- **Start with Auto** before switching to a premium model — you may not need the upgrade
+- **Disable models you don't use** in **Settings → Agents → Enabled models** to keep the picker clean
+- Long conversations accumulate context. Starting a new thread for a new task keeps token counts lower
+- When you reach your monthly credit limit, upgrade your plan or wait for the next monthly reset

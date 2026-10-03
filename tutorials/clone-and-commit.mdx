@@ -1,0 +1,85 @@
+---
+title: "Clone a Repository and Push Your First Commit in Shape"
+sidebarTitle: "Clone & Commit"
+description: "Clone a GitHub repository, make a change, stage and commit it, then push — a step-by-step Git workflow walkthrough for Shape IDE."
+---
+
+This tutorial covers Shape's end-to-end Git workflow: cloning a remote repository, making a change, committing it with a helpful message, and pushing to GitHub. You will use Shape's visual Source Control panel and Git Graph throughout — no terminal Git commands required.
+
+**Prerequisites:** Shape installed on Windows, a GitHub account, and the URL of a Git repository you have access to.
+
+---
+
+<Steps>
+  <Step title="Clone the repository">
+    On the Shape welcome screen, click **Clone Repository**. Paste your repository's Git URL — for example:
+
+    ```
+    https://github.com/your-org/your-repo.git
+    ```
+
+    Choose a parent folder on your machine where the cloned directory should be created. Shape runs `git clone` and shows progress in the notification area.
+  </Step>
+
+  <Step title="Open the cloned folder">
+    Once cloning finishes, go to **File → Open Folder** and select the newly created repository directory. Shape loads the project and activates Git tracking automatically.
+  </Step>
+
+  <Step title="Sign in to GitHub">
+    If your repository uses an HTTPS remote (the `https://github.com/...` format), you need to authenticate before you can push.
+
+    Click the **avatar icon** in the title bar and select **Sign in with GitHub**. Complete the OAuth flow in your browser. Shape stores the credential securely for future sessions.
+
+    <Note>
+      You can skip this step if your remote uses SSH and you have a valid SSH key configured on your machine.
+    </Note>
+  </Step>
+
+  <Step title="Make and save a change">
+    Open any file from the Explorer panel and make an edit — fix a typo, update a comment, or add a line. Save with **Ctrl+S**.
+
+    Open the Source Control panel with **Ctrl+Shift+G**. The file you edited appears under **Changes**. Click the filename to open a diff tab showing exactly what you changed.
+  </Step>
+
+  <Step title="Stage and commit">
+    Click the **+** icon next to the changed file to stage it. Type a commit message in the text field at the top of the Source Control panel.
+
+    <Tip>
+      Click the **sparkle icon** next to the message field to let the AI suggest a commit message based on your diff.
+    </Tip>
+
+    Click **Commit** to create the commit.
+  </Step>
+
+  <Step title="Push to GitHub">
+    Check the branch name shown in the Source Control panel header to confirm you are on the right branch.
+
+    Click the **Push** button (up arrow icon). If the status bar shows that your branch is behind the remote, click **Sync** instead — this pulls remote changes first, then pushes yours.
+
+    Authenticate if prompted by the browser.
+  </Step>
+
+  <Step title="View your commit in Git Graph">
+    Click the **Git Graph** icon on the Activity Bar. Your new commit appears as the latest node in the lane diagram. Right-click any commit to inspect its changes, compare it with another commit, or copy its hash.
+  </Step>
+</Steps>
+
+---
+
+## Troubleshooting
+
+<Accordion title="Authentication failed">
+  Sign out of GitHub from the avatar menu, then sign in again. Make sure you complete the full browser-based OAuth flow before returning to Shape.
+</Accordion>
+
+<Accordion title="Push rejected (non-fast-forward)">
+  Your branch is behind the remote — someone else pushed after you last fetched. Click **Sync** in the Source Control panel to pull the latest changes, resolve any merge conflicts, then push again.
+</Accordion>
+
+<Accordion title="Git Manager shows no pull requests">
+  Open **Window → Git Manager** and confirm you are signed in to GitHub. Git Manager only shows pull requests for repositories whose remote URL is on `github.com`.
+</Accordion>
+
+<Accordion title="No remote configured">
+  If you created a local repository rather than cloning, there is no remote yet. Open the Remotes dialog in the Source Control panel, click **Add Remote**, and paste your GitHub repository URL as `origin`.
+</Accordion>

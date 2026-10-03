@@ -1,0 +1,66 @@
+---
+title: "File Explorer: Browse and Manage Project Files in Shape"
+sidebarTitle: "File Explorer"
+description: "Open, create, rename, and delete files in Shape's Explorer sidebar. See Git status colors, navigate your project tree, and refresh after external changes."
+---
+
+The Explorer sidebar is your primary view into a project's folder structure. It shows your opened folder as a collapsible tree, reflects Git status through color cues, and lets you create, rename, and delete files without leaving the IDE.
+
+## Open the Explorer
+
+Click the **file icon** on the activity bar, or use any of these shortcuts:
+
+| Action | Shortcut / Menu |
+|---|---|
+| Toggle Explorer | `Ctrl+Shift+E` |
+| Open via menu | **View → Explorer** |
+| Opens automatically | When you open a project folder |
+
+## Navigate Your Files
+
+Click any file in the tree to open it in a new editor tab. The Explorer highlights the currently active file so you always know where you are.
+
+<Tip>
+Use `Ctrl+P` to open files by name when you already know what you're looking for — it's faster than scrolling the tree.
+</Tip>
+
+To scroll the tree to whichever file you're currently editing, open the Command Palette and run **Reveal in Explorer**.
+
+## Understand Git Status Colors
+
+Files in the Explorer are tinted to reflect their Git status:
+
+- **Yellow / modified** — the file has unsaved or staged changes
+- **Green / added** — a new untracked or staged file
+- **Red / deleted** — the file is marked for deletion
+
+These colors stay in sync with the Source Control panel and update automatically when you save, stage, or run Git commands.
+
+## Create, Rename, and Delete Files
+
+Right-click a folder or an empty area in the Explorer tree to open the context menu. Available actions include:
+
+- **New File**
+- **New Folder**
+- **Rename**
+- **Delete**
+- **Copy** / **Cut** / **Paste**
+
+For renames, press `Enter` to confirm. Deleted files go to your system Recycle Bin.
+
+You can also create a blank file at any time with **File → New Text File** (`Ctrl+N`), regardless of which folder is selected.
+
+## Collapse and Refresh the Tree
+
+The Explorer header contains two utility buttons:
+
+- **Collapse All** — folds every expanded folder in one click, useful for resetting your view
+- **Refresh** — rescans the folder on disk and updates the tree
+
+<Note>
+Click **Refresh** after making file changes in an external tool (file manager, terminal, another app). Shape does not always detect external modifications automatically.
+</Note>
+
+## Dirty File Badge
+
+When you have unsaved files open, a badge on the Explorer icon in the activity bar shows the count of dirty (unsaved) tabs. To save everything at once, press `Ctrl+K S`.

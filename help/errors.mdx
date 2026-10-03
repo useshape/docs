@@ -1,0 +1,94 @@
+---
+title: "Shape IDE Error Codes: 1000 to 9000 Series Reference"
+sidebarTitle: "Error Codes"
+description: "Look up Shape IDE error codes by number — account errors (1xxx), Cloud AI errors (2xxx), client errors (3xxx), IDE errors (4xxx), and more."
+---
+
+When Shape encounters a problem it cannot handle silently, it surfaces an error code. Find your code in the tables below to understand what went wrong and how to fix it.
+
+<Tip>
+  If you need to contact support about an error, note the error code, your OS version, and the Shape version from **Help → About** — this speeds up diagnosis significantly.
+</Tip>
+
+## 1xxx — Account Errors
+
+These errors relate to your Shape account, authentication, and session state.
+
+| Code | Name | Fix |
+|---|---|---|
+| **1000** | Auth required | Open **Settings → Account** and sign in. |
+| **1001** | Offline | Check your network connection or wait for the service interruption to resolve. |
+| **1002** | Session expired | Sign in again from the avatar menu in the title bar. |
+| **1003** | Sign-in failed | Complete the full browser-based sign-in flow. Confirm your browser can reach [useshape.org](https://useshape.org). |
+
+<Note>
+  Error 1001 may also appear during a Shape service interruption. Check [useshape.org](https://useshape.org) in your browser to confirm the service is reachable.
+</Note>
+
+## 2xxx — Cloud AI Errors
+
+These errors occur during AI Chat sessions and relate to the Shape cloud AI service.
+
+| Code | Name | Fix |
+|---|---|---|
+| **2000** | AI provider failure | Retry the request. If the issue persists, try switching to a different model or check for a service disruption. |
+| **2001** | Usage or credits | Check your billing dashboard and upgrade your plan or wait for your credit cycle to reset. |
+| **2002** | Network timeout | Check your internet connection. If you use a VPN or corporate proxy, try disabling it temporarily. |
+| **2003** | Payment required | Update your billing information at the [dashboard](https://useshape.org). |
+| **2100** | Rate limited | You have sent requests too quickly. Wait a moment and retry. |
+
+<Note>
+  Error 2001 appears when you are on the free plan and attempt to use a paid model, or when your paid credits are exhausted. Switch to the **Auto** model to continue without credits.
+</Note>
+
+## 3xxx — Client Errors
+
+| Code | Name | Fix |
+|---|---|---|
+| **3000** | Unofficial build | This version of Shape is not recognized as an official release. Download the latest installer from [useshape.org/download](https://useshape.org/download). |
+
+## 4xxx — IDE Errors
+
+These errors relate to local IDE features: file access, Git, language servers, search, terminal, and updates.
+
+### 4000 — Workspace and File Access
+
+| Code | Name | Fix |
+|---|---|---|
+| **4000** | Workspace or file access | Shape cannot read or write a file. Check the folder's permissions in Windows Explorer. If antivirus software is active, add an exception for your project folder. |
+
+### 4100 — Git
+
+| Code | Name | Fix |
+|---|---|---|
+| **4100** | Git failed | Check your Git credentials, confirm the remote URL is correct, look for lock files (`.git/index.lock`) left by a crashed process, and resolve any open merge conflicts. |
+
+### 4200 — Language Server
+
+| Code | Name | Fix |
+|---|---|---|
+| **4200** | Language server | A language server failed to start or crashed. Re-open the project folder, confirm the relevant server is enabled under **Settings → Features → Language Servers**, and ensure `node_modules` is installed. Check the **Output** panel for startup logs. |
+
+### 4300 — Index and Search
+
+| Code | Name | Fix |
+|---|---|---|
+| **4300** | Index or search | Shape cannot index the project for search. Confirm the folder is accessible, re-run indexing from the Command Palette, and check antivirus exclusions. |
+
+### 4400 — Terminal
+
+| Code | Name | Fix |
+|---|---|---|
+| **4400** | Terminal | The integrated terminal failed to start. Check your default shell setting under **Settings → Features → Terminal**, and confirm the shell executable is on your system `PATH`. |
+
+### 4500 — Update
+
+| Code | Name | Fix |
+|---|---|---|
+| **4500** | Update failed | Retry the update from **Help → Check for Updates**. If it fails again, download the latest installer manually from [useshape.org/download](https://useshape.org/download). |
+
+## 9xxx — General Errors
+
+| Code | Name | Fix |
+|---|---|---|
+| **9000** | Unknown error | An unexpected error occurred. Retry the action, restart Shape, and try again. If the error persists, [contact support](/help/contact-support) with the error code and steps to reproduce. |

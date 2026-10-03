@@ -1,0 +1,79 @@
+---
+title: "Shape Activity Bar: Switch Between IDE Sidebar Views"
+sidebarTitle: "Activity Bar"
+description: "Switch between Explorer, Search, Source Control, Git Graph, and Outline in Shape's activity bar, or open Browser and Settings as editor tabs."
+---
+
+The activity bar is the narrow vertical strip running along the far left edge of the Shape window. It's the fastest way to jump between the five sidebar views and to open the Browser or Settings without touching the menu bar.
+
+## Sidebar Views
+
+Each icon in the activity bar opens a different view in the primary sidebar. Click an icon to switch to that view. Click the same icon again to collapse the sidebar entirely.
+
+<CardGroup cols={2}>
+  <Card title="Explorer" icon="folder-open">
+    Browse and open files in your project. A **dirty file badge** showing the count of unsaved tabs appears on this icon whenever you have unsaved changes. Save all files with **Ctrl+S** or **File → Save All**.
+  </Card>
+  <Card title="Search" icon="magnifying-glass">
+    Find and replace text across your entire workspace. Supports regex and case-sensitive matching.
+  </Card>
+  <Card title="Source Control" icon="code-branch">
+    Stage, unstage, and commit changes. Displays a badge with the number of changed files.
+  </Card>
+  <Card title="Git Graph" icon="diagram-project">
+    A visual history of your commits and branches. Explore the full timeline of your repository at a glance.
+  </Card>
+  <Card title="Outline" icon="list">
+    Shows all symbols — functions, classes, variables — in the file you're currently editing. Great for navigating large files.
+  </Card>
+</CardGroup>
+
+## Bottom Activity Bar Actions
+
+Two icons at the bottom of the activity bar behave differently — they open **editor tabs** rather than sidebar views:
+
+| Icon | Opens |
+|---|---|
+| Chrome / browser icon | **Browser tab** — live design preview (same as **View → Preview**) |
+| Gear icon | **Settings tab** — Shape's settings editor |
+
+<Note>
+  The Browser and Settings icons open tabs in the central editor area, not the sidebar. Close them with **Ctrl+W** like any other editor tab.
+</Note>
+
+## Keyboard Shortcuts
+
+Every sidebar view has a menu equivalent and most have a keyboard shortcut:
+
+| View | Shortcut | Menu path |
+|---|---|---|
+| Explorer | **Ctrl+Shift+E** | **View → Explorer** |
+| Search | **Ctrl+Shift+F** | **View → Search** |
+| Source Control | **Ctrl+Shift+G** | **View → Source Control** |
+| Git Graph | — | **View → Git Graph** |
+| Outline | — | **View → Outline** |
+| Browser (Preview) | — | **View → Preview** |
+
+## What Is NOT on the Activity Bar
+
+A few features are commonly mistaken for activity bar items — they live elsewhere:
+
+<Accordion title="AI Chat">
+  AI Chat is in the **secondary sidebar on the right**, not the activity bar. Toggle it with the AI Chat button in the titlebar or via **View → AI Chat**.
+</Accordion>
+
+<Accordion title="Terminal, Problems, and Output">
+  These live in the **bottom panel**, not the sidebar. Open them with **Ctrl+`** (Terminal), **Ctrl+Shift+M** (Problems), or from the **View** menu.
+</Accordion>
+
+<Accordion title="Git Manager">
+  Git Manager (pull requests, Actions, checks) opens as a **separate window** via **Window → Git Manager**. It is not an activity bar view.
+</Accordion>
+
+<Accordion title="Bookmarks">
+  Bookmarks are keyboard-only. Use **Ctrl+Alt+B** to toggle. There is no activity bar icon for bookmarks.
+</Accordion>
+
+<Tip>
+  If the sidebar feels crowded, click the currently active activity bar icon to collapse it entirely. Click it again — or any other icon — to reopen it.
+</Tip>

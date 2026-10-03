@@ -1,0 +1,149 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Shape",
+  "theme": "mint",
+  "colors": {
+    "primary": "#0800ff",
+    "light": "#8484fc",
+    "dark": "#0b009b"
+  },
+  "logo": {
+    "light": "/images/Subtract(1)-inverted.svg",
+    "dark": "/images/Subtract.svg",
+    "href": "https:/useshape.org"
+  },
+  "favicon": {
+    "light": "/images/Frame.svg",
+    "dark": "/images/Frame-inverted.svg"
+  },
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/useshape/Shape"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction/install",
+              "introduction/quick-start",
+              "introduction/accounts"
+            ]
+          },
+          {
+            "group": "Workspace",
+            "pages": [
+              "workspace/workbench-tour",
+              "workspace/titlebar-and-panels",
+              "workspace/activity-bar",
+              "workspace/command-palette",
+              "workspace/layout-and-zen-mode"
+            ]
+          },
+          {
+            "group": "Editor",
+            "pages": [
+              "editor/editing-files",
+              "editor/tabs-and-splits",
+              "editor/intellisense",
+              "editor/languages-and-tooling",
+              "editor/diff-and-merge",
+              "editor/markdown-preview",
+              "editor/design-tools"
+            ]
+          },
+          {
+            "group": "Files",
+            "pages": [
+              "files/file-explorer",
+              "files/workspace-search",
+              "files/outline",
+              "files/bookmarks"
+            ]
+          },
+          {
+            "group": "AI",
+            "pages": [
+              "ai/chat-overview",
+              "ai/chat-modes",
+              "ai/reviewing-edits",
+              "ai/models-and-credits",
+              "ai/ai-settings"
+            ]
+          },
+          {
+            "group": "Git",
+            "pages": [
+              "git/source-control",
+              "git/branches-and-remotes",
+              "git/git-graph",
+              "git/github-sign-in"
+            ]
+          },
+          {
+            "group": "Terminal",
+            "pages": [
+              "terminal/integrated-terminal",
+              "terminal/npm-scripts",
+              "terminal/problems-output-tests"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/settings-overview",
+              "settings/editor-settings",
+              "settings/git-settings",
+              "settings/terminal-settings",
+              "settings/lint-and-lsp"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Tutorials",
+            "pages": [
+              "tutorials/first-project",
+              "tutorials/clone-and-commit",
+              "tutorials/refactor-with-ai"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/keyboard-shortcuts"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "help/faq",
+              "help/troubleshooting",
+              "help/errors",
+              "help/contact-support"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "icons": {
+    "library": "tabler"
+  },
+  "styling": {
+    "codeblocks": "system"
+  }
+}

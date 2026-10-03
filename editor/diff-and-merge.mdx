@@ -1,0 +1,100 @@
+---
+title: "Diff Viewer and Merge Conflict Resolution in Shape"
+sidebarTitle: "Diff & Merge"
+description: "Review Git changes and AI edits in Shape's diff tabs. Stage or restore individual hunks, inspect commit history, and resolve merge conflicts inline."
+---
+
+Shape opens a Monaco-powered diff view whenever you inspect a changed file — whether from a Git working tree change, a staged commit, a historical commit, or an AI edit. You can stage, unstage, or restore changes at the hunk level without leaving the editor.
+
+## Opening a Diff Tab
+
+There are three ways to open a diff:
+
+<CardGroup cols={3}>
+  <Card title="Source Control Panel" icon="code-branch">
+    Click any changed file in the Source Control panel to open its diff tab. The label shows whether you are viewing **Working Tree** or **Index**.
+  </Card>
+  <Card title="Git Graph" icon="diagram-project">
+    Right-click any commit in the Git Graph and choose **Compare with Working Tree** or **View Changes** to open a diff against that commit.
+  </Card>
+  <Card title="AI Edit Review" icon="wand-magic-sparkles">
+    After the AI edits files, a review card appears. Click any file in the pending strip to open its diff. See [Reviewing Edits](../ai/reviewing-edits) for details.
+  </Card>
+</CardGroup>
+
+## Diff Tab Labels
+
+| Label | What it shows |
+|---|---|
+| **Working Tree** | Your unstaged edits compared to the index |
+| **Index** | Your staged changes compared to the last commit |
+
+## Working with Hunks
+
+A hunk is a contiguous block of changed lines. The hunk actions toolbar appears alongside each hunk as you scroll through the diff.
+
+### Staging and Restoring (Working Tree)
+
+| Action | Shortcut | Effect |
+|---|---|---|
+| Stage hunk | `Ctrl+Y` | Moves hunk to the index, ready to commit |
+| Restore hunk | Toolbar button | Discards the change, reverting to the index version |
+
+### Unstaging (Index)
+
+| Action | Shortcut | Effect |
+|---|---|---|
+| Unstage hunk | `Ctrl+Shift+Y` | Moves hunk back to the working tree |
+
+<Tip>
+To stage or restore only part of a hunk, select the specific changed lines before using the toolbar action. Shape applies the action to the selection rather than the entire hunk.
+</Tip>
+
+The hunk toolbar label shows **Hunk N/M** so you always know where you are relative to the total number of changed blocks in the file.
+
+## Reviewing AI Edits
+
+When the AI completes a set of file changes, each change appears as a review card after it is written to disk. Click any file in the pending strip to open its diff.
+
+- **Keep** — accepts the file as-is and resolves the pending edit.
+- **Undo** — restores the file to the baseline state from before the AI edit chain began.
+
+<Note>
+Undo in the AI review context reverts to the pre-edit baseline, not just the previous individual change. Use it when you want to discard the entire AI edit sequence for that file. For pre-write approval before files are changed, see [Reviewing Edits](../ai/reviewing-edits).
+</Note>
+
+## Resolving Merge Conflicts
+
+When a `git merge` or `git pull` produces conflicts, Shape displays the standard conflict markers inline in the editor:
+
+```
+<<<<<<< HEAD
+const timeout = 3000;
+=======
+const timeout = 5000;
+>>>>>>> feature/retry-logic
+```
+
+<Steps>
+  <Step title="Open the conflicted file">
+    Conflicted files appear with a **C** indicator in the Source Control panel. Click the file to open it in the editor (not as a diff tab).
+  </Step>
+  <Step title="Resolve each conflict">
+    Edit the file manually to remove the `<<<<<<<`, `=======`, and `>>>>>>>` markers and keep the version you want. You can also combine lines from both sides.
+  </Step>
+  <Step title="Stage the resolved file">
+    Open the Source Control panel and stage the file (`Ctrl+Y` in a Working Tree diff, or the **+** button on the file row).
+  </Step>
+  <Step title="Commit">
+    Complete the merge by committing the staged files. The commit message is pre-filled with a merge summary.
+  </Step>
+</Steps>
+
+<Note>
+Shape does not yet include a dedicated three-way merge UI. All conflict resolution happens directly in the editor using the inline markers.
+</Note>
+
+## Tips
+
+- Close any diff tab with `Ctrl+W` the same as a regular editor tab.
+- Enable **Git Blame** in **Settings → Editor** to see line-level attribution as you work in source tabs — useful context alongside the diff view.
