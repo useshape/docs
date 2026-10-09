@@ -1,1 +1,1 @@
-The documentation site for the shape repository is not open for contributions. Please include any necessary documentation changes directly in your PR. Otherwise, a maintainer will make the required updates unprompted.
+Mintlify publishes this repository, which is synced from the docs folder in useshape/Shape.

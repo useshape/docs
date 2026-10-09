@@ -1,66 +1,47 @@
 ---
-title: "Troubleshooting Common Issues in Shape IDE on Windows"
-sidebarTitle: "Troubleshooting"
-description: "Fix common Shape IDE issues: app won't open, sign-in failures, AI usage errors, localhost preview not working, and Git Manager showing no pull requests."
+title: Troubleshooting
+description: When install, sign-in, or chat fails.
+order: 4
 ---
 
-Work through the relevant section below to resolve common Shape issues. If none of these steps fix your problem, [contact support](/help/contact-support) with your OS version and the Shape version from **Help → About**.
+Start with the matching heading. If none of these fit, [contact](/docs/help/contact) with the account email and the version from **Help → About**.
 
-<Accordion title="Shape won't open on Windows">
-  **Symptoms:** Shape does not launch, exits immediately, or shows a startup error.
+## The app will not open
 
-  **Steps to resolve:**
+It needs Windows 10 or 11, 64-bit. Download the installer again from [useshape.org/download](https://useshape.org/download) and run it.
 
-  1. Confirm you are running **Windows 10 or Windows 11, 64-bit**. Shape does not support 32-bit Windows or Windows versions before 10.
-  2. Download a fresh installer from [useshape.org/download](https://useshape.org/download) or the GitHub Releases page.
-  3. Run the installer as a normal user (not as Administrator, unless your IT policy requires it).
-  4. If you have security or antivirus software that blocks unsigned executables, add a Shape exception and try again.
-</Accordion>
+If it opens and closes immediately, run it once more after a reboot. If it still fails, send the version you tried to install.
 
-<Accordion title="Sign-in fails in the desktop app">
-  **Symptoms:** Clicking "Sign in" opens a browser window but Shape stays signed out, or the browser shows an error.
+## Sign-in never finishes
 
-  **Steps to resolve:**
+Finish the step in the browser, then return to the app. If the browser is stuck:
 
-  1. Complete the **full browser-based sign-in flow**. Shape waits for the browser to redirect back before updating the app — do not close the browser tab early.
-  2. If Shape still shows as signed out, open the **avatar menu** in the title bar, click **Sign Out**, then sign in again.
-  3. Ensure your browser can reach `useshape.org`. A VPN, corporate proxy, or content filter can block the OAuth redirect.
-  4. Try a different default browser if the redirect does not return control to Shape.
-</Accordion>
+1. Close the browser tab.
+2. Sign out from the app if you are halfway in.
+3. Sign in again.
 
-<Accordion title="AI Chat says usage is not allowed">
-  **Symptoms:** AI Chat returns an error like "usage not allowed," "insufficient credits," or "upgrade required."
+Do not paste a password into chat.
 
-  **Steps to resolve:**
+## Chat will not send
 
-  1. Open your [Billing dashboard](https://useshape.org) and check your current plan and remaining credits.
-  2. The free tier only supports the **Auto** model. Switch to Auto in the model selector if you are on the free plan.
-  3. If your credits are exhausted, upgrade your plan or wait for your credit cycle to reset.
+Check the plan and remaining credits on [Billing](/dashboard/settings/billing). Free includes Auto only. A named model on Free will not send.
 
-  See [Error Codes](/help/errors) for specific error numbers related to billing and AI usage.
-</Accordion>
+If you are on a paid plan and send still fails, switch to Auto once. If Auto works, the named model is the problem for that turn. If Auto also fails, check [status](/status).
 
-<Accordion title="Browser tab can't reach localhost">
-  **Symptoms:** The built-in Browser shows a connection error when you enter your local URL, or the page never loads.
+## The preview cannot reach localhost
 
-  **Steps to resolve:**
+Start your app first, then open that URL in the [browser](/docs/agent/browser).
 
-  1. Confirm your dev server is actually running. Start it from the **Scripts** menu in the title bar or run `npm run dev` in the terminal.
-  2. Use the **exact URL shown in the terminal** — the port number matters. Common URLs are `http://localhost:3000`, `http://localhost:5173`, or `http://127.0.0.1:8080`.
-  3. Reload the Browser tab after the dev server finishes starting up.
+`localhost` has to be the same machine. A URL on another device will not load in Shape’s preview.
 
-  **If design Apply fails:**
+## GitHub data is missing
 
-  - Confirm your project folder is open in Shape (not just a single file).
-  - The previewed page must be a local URL that Shape can map back to a source file. Remote URLs (production sites) do not support Apply.
-</Accordion>
+[Sign in with GitHub](/docs/git/github) and open a folder whose remote is on github.com. A fork or an org the GitHub account cannot see will look empty.
 
-<Accordion title="Git Manager shows no pull requests">
-  **Symptoms:** The Git Manager panel is empty or shows "No pull requests found."
+## MCP tools do not appear
 
-  **Steps to resolve:**
+Save `mcp.json`, restart Shape, and open the folder again. The `command` has to exist on `PATH` for the app, not only for a terminal you already opened. See [MCP](/docs/customize/mcp).
 
-  1. Open **Window → Git Manager** and check whether you are signed in to GitHub. Sign in from the **avatar menu** if not.
-  2. Confirm the open folder's remote URL points to `github.com`. Git Manager only supports GitHub-hosted repositories.
-  3. Run **git remote -v** in the terminal to check your remote URL. If it is blank or points elsewhere, add or update the remote in the Remotes dialog in the Source Control panel.
-</Accordion>
+## An update did not apply
+
+Use **Help → Check for Updates**. If it still reports the old version, install over it from [download](/download).

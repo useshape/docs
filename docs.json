@@ -2,148 +2,99 @@
   "$schema": "https://mintlify.com/docs.json",
   "name": "Shape",
   "theme": "aspen",
+  "description": "The desktop coding agent. Works in your files.",
   "colors": {
-    "primary": "#0800ff",
-    "light": "#8484fc",
-    "dark": "#0b009b"
+    "primary": "#3946FF",
+    "light": "#3946FF",
+    "dark": "#3946FF"
   },
   "logo": {
-    "light": "/images/Subtract(1)-inverted.svg",
-    "dark": "/images/Subtract.svg",
-    "href": "https:/useshape.org"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://useshape.org"
   },
-  "favicon": {
-    "light": "/images/Frame.svg",
-    "dark": "/images/Frame-inverted.svg"
+  "favicon": "/logo/icon.svg",
+  "appearance": {
+    "default": "dark"
   },
-  "navbar": {
-    "primary": {
-      "type": "github",
-      "href": "https://github.com/useshape/Shape"
-    }
+  "icons": {
+    "library": "lucide"
   },
   "navigation": {
     "tabs": [
       {
         "tab": "Docs",
+        "icon": "book-open",
         "groups": [
           {
-            "group": "Getting Started",
-            "pages": [
-              "introduction/install",
-              "introduction/quick-start",
-              "introduction/accounts"
-            ]
+            "group": "Get started",
+            "pages": ["index", "get-started/quickstart", "get-started/models"]
           },
           {
-            "group": "Workspace",
-            "pages": [
-              "workspace/workbench-tour",
-              "workspace/titlebar-and-panels",
-              "workspace/activity-bar",
-              "workspace/command-palette",
-              "workspace/layout-and-zen-mode"
-            ]
+            "group": "Agent",
+            "pages": ["agent/overview", "agent/plan", "agent/review", "agent/browser"]
           },
           {
-            "group": "Editor",
-            "pages": [
-              "editor/editing-files",
-              "editor/tabs-and-splits",
-              "editor/intellisense",
-              "editor/languages-and-tooling",
-              "editor/diff-and-merge",
-              "editor/markdown-preview",
-              "editor/design-tools"
-            ]
-          },
-          {
-            "group": "Files",
-            "pages": [
-              "files/file-explorer",
-              "files/workspace-search",
-              "files/outline",
-              "files/bookmarks"
-            ]
-          },
-          {
-            "group": "AI",
-            "pages": [
-              "ai/chat-overview",
-              "ai/chat-modes",
-              "ai/reviewing-edits",
-              "ai/models-and-credits",
-              "ai/ai-settings"
-            ]
+            "group": "Plugins",
+            "pages": ["customize/plugins", "customize/mcp", "customize/slash-commands"]
           },
           {
             "group": "Git",
-            "pages": [
-              "git/source-control",
-              "git/branches-and-remotes",
-              "git/git-graph",
-              "git/github-sign-in"
-            ]
-          },
-          {
-            "group": "Terminal",
-            "pages": [
-              "terminal/integrated-terminal",
-              "terminal/npm-scripts",
-              "terminal/problems-output-tests"
-            ]
-          },
-          {
-            "group": "Settings",
-            "pages": [
-              "settings/settings-overview",
-              "settings/editor-settings",
-              "settings/git-settings",
-              "settings/terminal-settings",
-              "settings/lint-and-lsp"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Tutorials",
-            "pages": [
-              "tutorials/first-project",
-              "tutorials/clone-and-commit",
-              "tutorials/refactor-with-ai"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Reference",
-        "groups": [
-          {
-            "group": "Reference",
-            "pages": [
-              "reference/keyboard-shortcuts"
-            ]
+            "pages": ["git/github", "git/commits"]
           },
           {
             "group": "Help",
             "pages": [
-              "help/faq",
+              "help/install",
               "help/troubleshooting",
-              "help/errors",
-              "help/contact-support"
+              "help/shortcuts",
+              "help/faq",
+              "help/contact"
             ]
           }
         ]
+      },
+      {
+        "tab": "Contributing",
+        "icon": "git-branch",
+        "groups": [
+          {
+            "group": "Contribute",
+            "pages": [
+              "developing/overview",
+              "developing/architecture",
+              "developing/local-development",
+              "developing/agent-tools",
+              "developing/language-servers",
+              "developing/indexing-and-search",
+              "developing/client-trust",
+              "developing/tauri-ipc"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "icon": "list",
+        "pages": ["changelog"]
       }
     ]
   },
-  "icons": {
-    "library": "tabler"
+  "navbar": {
+    "links": [
+      { "type": "github", "href": "https://github.com/useshape/Shape" }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Download",
+      "href": "https://useshape.org/download"
+    }
   },
-  "styling": {
-    "codeblocks": "system"
+  "footer": {
+    "socials": {
+      "x": "https://x.com/useshape",
+      "github": "https://github.com/useshape/Shape",
+      "discord": "https://discord.com/invite/MMCEDVZKYf"
+    }
   }
 }
