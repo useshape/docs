@@ -1,12 +1,12 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Shape",
-  "theme": "mint",
+  "theme": "aspen",
   "description": "The desktop coding agent. Works in your files.",
   "colors": {
-    "primary": "#4E59FF",
-    "light": "#5662FF",
-    "dark": "#525DFF"
+    "primary": "#3946FF",
+    "light": "#3946FF",
+    "dark": "#3946FF"
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -18,7 +18,7 @@
     "default": "dark"
   },
   "icons": {
-    "library": "tabler"
+    "library": "lucide"
   },
   "navigation": {
     "tabs": [
@@ -95,12 +95,6 @@
       "x": "https://x.com/useshape",
       "github": "https://github.com/useshape/Shape",
       "discord": "https://discord.com/invite/MMCEDVZKYf"
-    }
-  },
-  "background": {
-    "color": {
-      "light": "#FFFFFF",
-      "dark": "#202020"
     }
   }
 }
